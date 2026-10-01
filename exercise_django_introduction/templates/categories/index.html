@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories</title>
+</head>
+<body>
+
+    <h1>Asya's notes categories</h1>
+    {% if categories_with_notes_count %}
+        <ul>
+        {% for category, notes_count in categories_with_notes_count.items %}
+            <li>{{ category }} - holds {{ notes_count }} notes
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No categories yet</p>
+    {% endif %}
+
+    <h3>Number of categories: {{ all_categories.count }}</h3>
+
+
+</body>
+</html>

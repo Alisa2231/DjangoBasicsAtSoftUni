@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reviews by {{ author }}</title>
+</head>
+<body>
+
+    <h1>Reviews by {{ author }}</h1>
+    {% for review in reviews %}
+        <li>Review by {{ review.author }} named {{ review.title }}: {{ review.body }}</li>
+    {% endfor %}
+
+</body>
+</html>
