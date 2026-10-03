@@ -1,10 +1,75 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Books with reviews</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>{% block title %}{{ page_title }}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 </head>
 <body>
+    <header class="navbar bg-primary navbar-dark">
+        <img class="ms-4" height="50" width="50" src="{% static 'images/logo.jpg' %}"/>
+
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'landing_page' %}">Book Hub</a>
+        </div>
+
+        <nav class="d-flex gap-3">
+            <a class="nav-link text-white" href="{% url 'all_books' %}">Books</a>
+            <a class="nav-link text-white me-3" href="{% url 'recent_reviews' %}">Recent Reviews</a>
+        </nav>
+    </header>
+
+    <main class="container my-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+
+        <div id="footer" class="container">
+
+            <div class="container-fluid w-75">
+
+                <div class="row" style="padding: 10px 0px">
+
+                    <div class="col-lg-5 text-start">
+                        <small>Copyright &copy; Books with reviews 2026</small>
+                    </div>
+
+                    <div class="col-lg-2 my-2 my-lg-0" style="color:black">
+
+                        <a href="https://www.facebook.com/iCatRescue/" class="footer-link" target=”_blank”>
+                            <img src="{% static 'images/facebook-logo-white.png'%}" class="me-xl-4 me-2" style="width:25px; height:25px">
+                        </a>
+
+                        <a href="https://www.instagram.com/icat_rescue/" class="footer-link" target="_blank">
+                            <img src="{% static 'images/instagram-logo-white.png'%}" class="me-xl-4 me-2" style="width:25px; height:25px">
+                        </a>
+
+                        <a href="mailto:contact@icatrescue.com" class="footer-link">
+
+                            <img src="{% static 'images/email-icon-white.png'%}" style="width:26px; height:20px">
+
+                        </a>
+
+                    </div>
+                    <div class="col-lg-2"></div>
+
+                    <div class="col-lg-3">
+                        <small>Website created by <a href="mailto:asya22@abv.bg" target="_blank" style="color:white; text-decoration:none"><i>Asya Nikolova</i></a></small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
 </body>
 </html>

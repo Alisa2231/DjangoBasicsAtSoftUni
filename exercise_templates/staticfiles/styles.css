@@ -1,0 +1,15 @@
+	#footer{
+		
+		max-width:100%;
+		background-color: rgba(2, 118, 163, 0.75);
+		bottom:0%;
+		font-family: intro-book;
+		color:white;
+						
+		}
+		
+	.footer-link{
+			
+		text-decoration:none;	
+			
+		}
