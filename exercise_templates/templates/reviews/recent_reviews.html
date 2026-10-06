@@ -1,13 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'books/index.html' %}
 
-</body>
-</html>
+{% block content %}
+    <h1>Latest book reviews</h1>
+    {% for review in recent_reviews %}
+        <p class="my-3"><a style="text-decoration: none; color: black" href="{% url 'review_details' review_id=review.id %}">{{ review.title }} by {{ review.author }}</a></p>
+    {% empty %}
+    {% endfor %}
+{% endblock %}

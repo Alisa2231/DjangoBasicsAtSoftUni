@@ -1,13 +1,12 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'books/index.html' %}
 
-</body>
-</html>
+{% block content %}
+    <h1>{{ book.title|capfirst }} <span class="not-bold">by</span>  {{ book.author|capfirst }}</h1>
+    <img src="{{ book.image_url }}" alt="{{ book.title }}" height="400" class="my-3">
+    <p><strong>Publisher</strong>: {{ book.publisher }}</p>
+    <p><strong>ISBN</strong>: {{ book.isbn }}</p>
+    <p><strong>Genre</strong>: {{ book.genre|lower|capfirst }}</p>
+    <p><strong>Publishing date</strong>: {{ book.publishing_date }}</p>
+    <p><strong>Description</strong>: {{ book.description|truncatewords:10|default:'No description available'|safe }}</p>
+    <p><strong style="font-size: 150%">Price: <span style="color: green">{{ book.price|floatformat:3 }}</span> </strong>EUR</p>
+{% endblock %}

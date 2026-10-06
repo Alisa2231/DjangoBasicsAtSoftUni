@@ -5,4 +5,4 @@ from books.models import Book
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    list_display = ['title', 'author', 'publisher', 'price']
+    list_display = ['title', 'author', 'slug', 'image_url', 'publisher', 'price']

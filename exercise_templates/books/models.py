@@ -23,7 +23,7 @@ class Book(models.Model):
     isbn = models.CharField(max_length=13, unique=True)
     genre = models.CharField(max_length=100, choices=GENRES.choices)
     publishing_date = models.DateField()
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     image_url = models.URLField()
     slug = models.CharField(editable=False, unique=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -33,4 +33,4 @@ class Book(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.slug
+        return f'{self.title} by {self.author}'

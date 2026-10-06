@@ -8,26 +8,28 @@
     <title>{% block title %}{{ page_title }}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 </head>
-<body>
+<body class="d-flex flex-column vh-100 justify-content-between">
     <header class="navbar bg-primary navbar-dark">
-        <img class="ms-4" height="50" width="50" src="{% static 'images/logo.jpg' %}"/>
+        <div class="container w-75 d-flex justify-content-between">
+            <div>
+                <img class="me-4" height="50" width="50" src="{% static 'images/logo.jpg' %}"/>
+                <a class="navbar-brand" href="{% url 'landing_page' %}">Book Hub</a>
+            </div>
 
-        <div class="container">
-            <a class="navbar-brand" href="{% url 'landing_page' %}">Book Hub</a>
+            <nav class="d-flex gap-3">
+                    <a class="nav-link text-white" href="{% url 'all_books' %}">Books</a>
+                    <a class="nav-link text-white me-3" href="{% url 'recent_reviews' %}">Recent Reviews</a>
+            </nav>
         </div>
-
-        <nav class="d-flex gap-3">
-            <a class="nav-link text-white" href="{% url 'all_books' %}">Books</a>
-            <a class="nav-link text-white me-3" href="{% url 'recent_reviews' %}">Recent Reviews</a>
-        </nav>
     </header>
 
     <main class="container my-4">
         {% block content %}
+            <h1 class="text-center m-5">Welcome to the <strong>Book Hub</strong></h1>
         {% endblock %}
     </main>
 
-    <footer>
+    <footer class="bg-primary">
 
         <div id="footer" class="container">
 
@@ -36,20 +38,20 @@
                 <div class="row" style="padding: 10px 0px">
 
                     <div class="col-lg-5 text-start">
-                        <small>Copyright &copy; Books with reviews 2026</small>
+                        <small>Copyright &copy; Book Hub 2026</small>
                     </div>
 
                     <div class="col-lg-2 my-2 my-lg-0" style="color:black">
 
-                        <a href="https://www.facebook.com/iCatRescue/" class="footer-link" target=”_blank”>
+                        <a href="https://www.facebook.com/" class="footer-link" target=”_blank”>
                             <img src="{% static 'images/facebook-logo-white.png'%}" class="me-xl-4 me-2" style="width:25px; height:25px">
                         </a>
 
-                        <a href="https://www.instagram.com/icat_rescue/" class="footer-link" target="_blank">
+                        <a href="https://www.instagram.com/" class="footer-link" target="_blank">
                             <img src="{% static 'images/instagram-logo-white.png'%}" class="me-xl-4 me-2" style="width:25px; height:25px">
                         </a>
 
-                        <a href="mailto:contact@icatrescue.com" class="footer-link">
+                        <a href="mailto:asya22@abv.bg" class="footer-link">
 
                             <img src="{% static 'images/email-icon-white.png'%}" style="width:26px; height:20px">
 
@@ -58,7 +60,7 @@
                     </div>
                     <div class="col-lg-2"></div>
 
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 d-flex justify-content-end">
                         <small>Website created by <a href="mailto:asya22@abv.bg" target="_blank" style="color:white; text-decoration:none"><i>Asya Nikolova</i></a></small>
                     </div>
 
