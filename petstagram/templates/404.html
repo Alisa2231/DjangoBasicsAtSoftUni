@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Starts Head Section -->
@@ -17,11 +19,11 @@
         <div class="container">
             <div class="logo">
                 <!-- Link to Home Page -->
-                <a href="#">
+                <a href="{% url 'common:home' %}">
                     <img width="50px" src="/static/images/free-30-instagram-stories-icons23_122570.png" alt="img1">
                 </a>
                 <!-- Link to Home Page -->
-                <a class="home" href="#">
+                <a class="home" href="{% url 'common:home' %}">
                     <i>Petstagram</i>
                 </a>
             </div>
@@ -30,7 +32,7 @@
                 <ul class="nav-group">
                     <li class="nav-item">
                         <!-- Link to Add Pet Page -->
-                        <a href="#">
+                        <a href="{% url 'pets:pet-add' %}">
                             <i>Add Pet</i>
                         </a>
                     </li>
@@ -87,7 +89,7 @@
 
         <h3>Error 404 - page not found.</h3>
         <!-- Link to Home Page -->
-        <a href="#">
+        <a href="{% url 'common:home' %}">
             <button>Return to Petstagram</button>
         </a>
     </div>
