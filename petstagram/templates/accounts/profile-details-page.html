@@ -1,74 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <!-- Starts Head Section -->
-  <head>
-    <link rel="stylesheet" href="/static/css/styles.css" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="/static/images/free-30-instagram-stories-icons23_122570.png"
-    />
-    <title>Petstagram</title>
-  </head>
-  <!-- End Head Section -->
+{% extends 'common/home-page.html' %}
 
-  <!-- Starts Body Section -->
-  <body>
-    <!-- Starts Header Section with Navigation Bar -->
-    <header>
-      <nav class="navbar">
-        <div class="container">
-          <div class="logo">
-            <!-- Link to Home Page -->
-            <a href="#">
-              <img
-                width="50px"
-                src="/static/images/free-30-instagram-stories-icons23_122570.png"
-                alt="img1"
-              />
-            </a>
+{% load static %}
 
-            <!-- Link to Home Page -->
-            <a class="home" href="#">
-              <i>Petstagram</i>
-            </a>
-          </div>
-
-          <div class="nav-links">
-            <ul class="nav-group">
-              <li class="nav-item">
-                <!-- Link to Add Pet Page -->
-                <a href="#">
-                  <i>Add Pet</i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <!-- Link to Add Photo Page -->
-                <a href="#">
-                  <i>Add Photo</i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <!-- Link to Profile Page -->
-                <a href="#">
-                  <i>Profile</i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <!-- Log out -->
-                <a href="#">
-                  <i>Log out</i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- End Header Section with Navigation Bar -->
-
-    <!-- Starts Main Section -->
-    <main>
+{% block content %}
       <!-- Start Profile Details Section -->
       <div class="profile">
         <!-- Start Profile Personal Data Section -->
@@ -86,7 +20,7 @@
 
               <!-- IF the viewer is the owner of the profile -->
               <!-- Link to Edit Profile Page -->
-              <a href="#">
+              <a href="{% url 'accounts:profile-edit' %}">
                 <img
                   class="edit-img"
                   src="/static/images/edit-pen-icon-6.jpg"
@@ -95,7 +29,7 @@
               </a>
 
               <!-- Link to Delete Profile Page -->
-              <a href="">
+              <a href="{% url 'accounts:profile-delete' %}">
                 <img
                   class="bin-img"
                   src="/static/images/icon-remove-22.jpg"
@@ -134,7 +68,7 @@
           <div class="statuses">
             <!-- Start 1st Pet Details Page -->
             <!-- Link to First Pet Details Page -->
-            <a href="#">
+            <a href="{% url 'pets:pet-details' %}">
               <div class="head-pet">
                 <div class="status">
                   <div class="image">
@@ -308,15 +242,4 @@
       </div>
 
       <!-- End Profile Details Section -->
-    </main>
-    <!-- End Main Section -->
-
-    <!-- Start Footer Section -->
-    <div class="footer">
-      <span class="footer-section">
-        ©  SOFTUNI WORKSHOP FOR PYTHON WEB MODULE
-      </span>
-    </div>
-    <!-- End Footer Section -->
-  </body>
-</html>
+ {% endblock %}
