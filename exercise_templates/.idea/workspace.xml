@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77cec81a-6d7c-49b5-be0e-8001a9248a9d" name="Changes" comment="" />
+    <list default="true" id="77cec81a-6d7c-49b5-be0e-8001a9248a9d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../exercise_forms_basics/books/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise_forms_basics/books/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise_forms_basics/reviews/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise_forms_basics/reviews/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise_forms_basics/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise_forms_basics/templates/books/add-book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise_forms_basics/templates/reviews/add-review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,9 +93,9 @@
       <entry key="W1" value="692.6955320421138" />
     </decayedShown>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="3K6FjIXkNOWWmOXA4MMmE54lSu5" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -113,6 +122,7 @@
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Alisa/WD/PycharmProjects/SoftUni/7_Python_Web/DjangoBasicsAtSoftUni/exercise_templates",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -240,7 +250,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-c59985aa861c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.24374.152" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-PY-261.27258.51" />
+        <option value="bundled-python-sdk-84eaadda3698-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.27258.51" />
       </set>
     </attachedChunks>
   </component>
@@ -252,6 +263,7 @@
       <option name="presentableId" value="Default" />
       <updated>1790870247320</updated>
       <workItem from="1790870248358" duration="34283000" />
+      <workItem from="1791728828680" duration="983000" />
     </task>
     <servers />
   </component>

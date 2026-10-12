@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ book.title|capfirst }}</h1>
+    <img src="{{ book.image_url }}" alt="{{ book.title }}" height="400" class="my-3">
+    <p><strong>Language</strong>: {{ book.language }}</p>
+    <p><strong>ISBN</strong>: {{ book.isbn }}</p>
+    <p><strong>Genre</strong>: {{ book.genre|lower|capfirst }}</p>
+    <p><strong>Pages</strong>: {{ book.pages }}</p>
+    <p><strong>Publishing date</strong>: {{ book.publishing_date }}</p>
+    <p><strong>Description</strong>: {{ book.description|truncatewords:10|default:'No description available'|safe }}</p>
+    <p><strong style="font-size: 150%">Price: <span style="color: green">{{ book.price|floatformat:3 }}</span> </strong>EUR</p>
+
+    <button class="btn btn-warning"><a href="{% url 'books:edit-book' book.slug %}">Edit Book Details</a></button>
+    <button class="btn btn-danger"><a href="{% url 'books:delete-book' book.slug %}">Delete Book</a></button>
+{% endblock %}
