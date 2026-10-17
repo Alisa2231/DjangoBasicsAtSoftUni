@@ -1,6 +1,8 @@
 from django import forms
+from django.core.exceptions import ValidationError
 
 from books.models import Book
+from books.validators import ValidatePrice
 
 
 # class BookFormBasic(forms.Form):
@@ -31,6 +33,8 @@ from books.models import Book
 #     image_url = forms.ImageField(label='Image')
 
 class BookBaseFormBasic(forms.ModelForm):
+    price = forms.DecimalField(max_digits=6, decimal_places=2, validators=[ValidatePrice()])
+
     class Meta:
         model = Book
         fields = '__all__'
@@ -49,6 +53,25 @@ class BookBaseFormBasic(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'placeholder': 'Put the book title here'}),
         }
+        error_messages = {
+            'title': {
+                'required': 'Please enter a valid book title.',
+                'unique': 'This book already exists. Please provide a unique book title.',
+            }
+        }
+
+    def clean_isbn(self):
+        isbn = self.cleaned_data['isbn']
+        if isbn and not isbn.startswith('978'):
+            raise ValidationError('ISBN should start with 978')
+        return isbn
+
+    # def clean(self):
+    #     cleaned_data = super().clean()
+    #     if cleaned_data['title'].startswith('The') and cleaned_data['pages'] < 10:
+    #         raise ValidationError('Fiction books should have at least 10 pages')
+    #     return cleaned_data
+
 
 class BookAddForm(BookBaseFormBasic):
     ...

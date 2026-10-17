@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>{{ book.title|capfirst }}</h1>
-    <img src="{{ book.image_url }}" alt="{{ book.title }}" height="400" class="my-3">
+    <img src="{{ book.cover_image.url }}" alt="{{ book.title }}" height="400" class="my-3">
     <p><strong>Language</strong>: {{ book.language }}</p>
     <p><strong>ISBN</strong>: {{ book.isbn }}</p>
     <p><strong>Genre</strong>: {{ book.genre|lower|capfirst }}</p>

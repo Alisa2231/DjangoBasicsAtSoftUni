@@ -1,3 +1,4 @@
+from django.forms import modelform_factory
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import BookAddForm, BookEditForm, BookDeleteForm
 from .models import Book
@@ -8,10 +9,13 @@ def index(request):
     return render(request, 'base.html', context)
 
 def add_book(request):
-    form = BookAddForm(request.POST or None)
+    form = BookAddForm(request.POST or None, request.FILES or None)
+    # FormDynamic = modelform_factory(Book, fields=('title', 'pages'))
+    # form = FormDynamic(request.POST or None)
     if form.is_valid():
-        form.save()
-        return redirect('books: all-books')
+        image = form.save()
+        image.save()
+        return redirect('books:all-books')
     context = {'page-title': 'Add Book', 'form': form}
     return render(request, 'books/add-book.html', context)
 
@@ -29,7 +33,7 @@ def book_details(request, slug):
 
 def edit_book(request, slug):
     book = get_object_or_404(Book, slug=slug)
-    form = BookEditForm(request.POST or None, instance=book)
+    form = BookEditForm(request.POST or None, request.FILES or None, instance=book)
 
     if form.is_valid():
         form.save()

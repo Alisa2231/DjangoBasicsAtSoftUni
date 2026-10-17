@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator
 from django.db import models
 from django.template.defaultfilters import slugify
 
@@ -27,6 +28,8 @@ class Book(models.Model):
     publishing_date = models.DateField()
     description = models.TextField()
     image_url = models.URLField()
+    cover_image = models.ImageField(upload_to='cover_images', null=True, blank=True)
+    sample_chapter = models.FileField(upload_to='sample_chapters', null=True, blank=True)
     slug = models.SlugField(unique=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
 
