@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 class="mb-5">Review <span class="not-bold"> about </span>{{ review.book }}</h2>
+    <p><strong>Content: </strong> {{ review.body }}</p>
+    <p><strong>Rating: </strong> {{ review.rating }}</p>
+    <p><strong>From: </strong> {{ review.author }}</p>
+    <p><strong>Posted on: </strong> {{ review.created_at }}</p>
+{% endblock %}
