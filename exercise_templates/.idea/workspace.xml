@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77cec81a-6d7c-49b5-be0e-8001a9248a9d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../exercise_forms_basics/books/validators.py" afterDir="false" />
-    </list>
+    <list default="true" id="77cec81a-6d7c-49b5-be0e-8001a9248a9d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -259,6 +257,7 @@
       <workItem from="1791728828680" duration="983000" />
       <workItem from="1791810924524" duration="1633000" />
       <workItem from="1792253874697" duration="1073000" />
+      <workItem from="1792255677342" duration="1199000" />
     </task>
     <servers />
   </component>
