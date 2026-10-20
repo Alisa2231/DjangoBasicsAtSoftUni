@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Traveler</title>
+</head>
+<body>
+
+    <h1>Add Traveler</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <h3>Are you sure you want to delete {{ object.name }}?</h3>
+        <button type="submit">Yes, delete traveler</button>
+    </form>
+
+</body>
+</html>
